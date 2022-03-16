@@ -1,0 +1,14 @@
+<form action="/product" method="post">
+    <label for="name">Name of the product</label>
+    <input type="text" id="name" name="name" placeholder="Product name">
+    <label for="price">Price </label>
+    <input type="text" id="price" name="price" placeholder="Price">
+    <label for="category">select category</label>
+    <select name="category" id="category">        
+        <% for(let category of categories){ %> 
+            <option value="<%=category%>"><%=category%></option>
+        <% } %> 
+    </select>
+    <input type="submit" value="Add">    
+</form>
+<a href="/products"><button>Home</button></a>

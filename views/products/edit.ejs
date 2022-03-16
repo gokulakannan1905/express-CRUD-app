@@ -1,0 +1,14 @@
+<form action="/product/<%=product._id%>?_method=PUT" method="post">
+    <label for="name">Name of the product</label>
+    <input type="text" id="name" name="name" placeholder="Product name" value="<%=product.name%>">
+    <label for="price">Price </label>
+    <input type="text" id="price" name="price" placeholder="Price" value="<%=product.price%>">
+    <label for="category">select category</label>
+    <select name="category" id="category">        
+        <% for(let category of categories){ %> 
+            <option value="<%=category%>" <%=product.category===category?'selected':''%>><%=category%></option>
+        <% } %> 
+    </select>
+    <input type="submit" value="Save">
+    <a href="/product/<%=product._id%>"><button>Cancel</button></a>
+</form>

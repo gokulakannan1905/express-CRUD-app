@@ -1,0 +1,9 @@
+<h2>Product name    : <%=product.name%></h2>
+<p>Price : <%= product.price %> </p>
+<p>Category : <a href="/products?category=<%= product.category %>"><%= product.category %></a></p>
+
+<a href="/products"><button>Home</button></a>
+<a href="/product/<%=product._id%>/edit"><button>Edit</button></a>
+<form action="/product/<%=product._id%>?_method=DELETE" method="post" style="display: inline-block;">
+    <button>Delete</button>
+</form>
