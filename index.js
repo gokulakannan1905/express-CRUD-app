@@ -32,14 +32,14 @@ const categories = ['Electronics', 'Clothes', 'Food', 'Books', 'Other'];
 app.get('/',(req,res)=>{
     res.render('root');
 })
-app.get('/test',(req,res)=>{
-    res.render('test/test.ejs');
+app.get('/test',(req,res)=>{    // absolute path
+    res.render('test/test.ejs'); // relative path
 })
 app.get('/products', async (req, res) => {
     const { category } = req.query;
     if(category){
         const products = await Product.find({category});
-        res.render('products/index', { products,category });
+        res.render('products/index', { products,category }); 
     }
     else{
         const products = await Product.find();
