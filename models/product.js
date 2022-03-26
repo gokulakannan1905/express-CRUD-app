@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const productScheme = new mongoose.Schema({
+const { Schema } = mongoose;
+const productScheme = new Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'Name is required'],
     },
     price: {
         type: Number,
@@ -13,6 +14,10 @@ const productScheme = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['Electronics', 'Clothes', 'Food', 'Books', 'Other']
+    },
+    farm:{
+        type : Schema.Types.ObjectId,
+        ref : 'Farm'
     }
 });
 

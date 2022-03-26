@@ -1,4 +1,5 @@
-<form action="/product" method="post">
+<h2>Add product to <%=name %> </h2>
+<form action="/farms/<%= id %>/products" method="post">
     <label for="name">Name of the product</label>
     <input type="text" id="name" name="name" placeholder="Product name">
     <label for="price">Price </label>
